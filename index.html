@@ -5,162 +5,245 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anwesha Prakash - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    }
+    .section-divider {
+      border-top: 2px solid #4b5563;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .section-divider::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(to right, #60a5fa, #a855f7);
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #60a5fa;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .profile-img {
+      border: 4px solid #4b5563;
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white font-sans">
   <!-- Navbar -->
-  <nav class="bg-gray-800 fixed w-full top-0 z-10 shadow-lg">
+  <nav class="bg-gray-900 fixed w-full top-0 z-10 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between h-16">
-        <div className="flex items-center">
-          <h1 className="text-xl font-bold text-blue-400">Anwesha Prakash</h1>
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold text-blue-400">Anwesha Prakash</h1>
         </div>
-        <div className="flex space-x-8 items-center">
-          <a href="#home" class="text-gray-300 hover:text-blue-400 transition duration-300">Home</a>
-          <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
-          <a href="#experience" class="text-gray-300 hover:text-blue-400 transition duration-300">Experience</a>
-          <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
-          <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
-          <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
+        <div class="flex space-x-8 items-center">
+          <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Home</a>
+          <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+          <a href="#experience" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Experience</a>
+          <a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+          <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
+          <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Home Section -->
-  <section id="home" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Welcome</h2>
-    <div class="text-center">
+  <section id="home" class="py-20 px-4 md:px-8 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto text-center">
+      <img src="profile.jpg" alt="Anwesha Prakash" class="profile-img w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto mb-6 object-cover">
       <h1 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4">Anwesha Prakash</h1>
-      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        Pre-final-year Electronics and Communication Engineering student specializing in IoT, currently interning as a Generative AI Engineer. Skilled in AI/ML, NLP, and data analysis, with experience in IoT systems, cloud platforms, and generative AI. Proficient in Python, embedded systems, and projects involving speech recognition and code analysis. Aiming to apply technical skills to create impactful solutions.
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+        Pre-final-year Electronics and Communication Engineering student specializing in IoT, currently interning as a Generative AI Engineer. Skilled in AI/ML, NLP, and data analysis, with experience in IoT systems, cloud platforms, and generative AI.
       </p>
+      <a href="#contact" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 rounded-full hover:from-blue-600 hover:to-purple-700 transition duration-300">Get in Touch</a>
     </div>
   </section>
+
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
   <!-- About Section -->
   <section id="about" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">About</h2>
-    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Education</h3>
-    <p class="text-gray-300">Netaji Subhas University of Technology (Nov 2022 - Jul 2026)</p>
-    <p class="text-gray-300">Bachelor of Technology in Electronics and Communication Engineering, Specialization: Internet of Things</p>
-    <h3 class="text-2xl font-semibold text-blue-300 mt-8 mb-4">Certifications</h3>
-    <ul class="list-disc list-inside text-gray-300">
-      <li><a href="https://coursera.org/share/a470bf0a119129954eb5922e547d229c" target="_blank" rel="noopener noreferrer" class="text-blue-400">Supervised Machine Learning: Regression and Classification</a> - DeepLearning.AI</li>
-      <li><a href="https://coursera.org/share/e2895d041b8f3d2148fbdd388fc77723" target="_blank" rel="noopener noreferrer" class="text-blue-400">Advanced Learning Algorithms</a> - DeepLearning.AI</li>
-      <li><a href="https://coursera.org/share/85c8f8e93858162ac43aec90c0c97b80" target="_blank" rel="noopener noreferrer" class="text-blue-400">Unsupervised Learning, Recommenders, Reinforcement Learning</a> - DeepLearning.AI</li>
-    </ul>
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">About</h2>
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-2xl font-semibold text-purple-400 mb-4">Education</h3>
+      <p class="text-gray-300">Netaji Subhas University of Technology (Nov 2022 - Jul 2026)</p>
+      <p class="text-gray-300">Bachelor of Technology in Electronics and Communication Engineering, Specialization: Internet of Things</p>
+      <h3 class="text-2xl font-semibold text-purple-400 mt-8 mb-4">Certifications</h3>
+      <ul class="list-disc list-inside text-gray-300">
+        <li><a href="https://coursera.org/share/a470bf0a119129954eb5922e547d229c" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Supervised Machine Learning: Regression and Classification</a> - DeepLearning.AI</li>
+        <li><a href="https://coursera.org/share/e2895d041b8f3d2148fbdd388fc77723" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Advanced Learning Algorithms</a> - DeepLearning.AI</li>
+        <li><a href="https://coursera.org/share/85c8f8e93858162ac43aec90c0c97b80" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">Unsupervised Learning, Recommenders, Reinforcement Learning</a> - DeepLearning.AI</li>
+      </ul>
+    </div>
   </section>
+
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
   <!-- Experience Section -->
   <section id="experience" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">Experience</h2>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-      <h3 class="text-xl font-semibold text-blue-300">Automation Data Analyst</h3>
-      <p class="text-gray-400">Hindustan Petroleum Corporation Limited | Jun 2024 - Jul 2024</p>
-      <ul class="list-disc list-inside text-gray-300 mt-4">
-        <li>Developed an LSTM model predicting equipment failures, reducing downtime by 14.8%.</li>
-        <li>Automated IoT sensor alerts, cutting manual inspections by 20%.</li>
-        <li>Built an ensemble model improving fuel demand forecast accuracy by 23.7% and cutting excess inventory costs by 15%.</li>
-        <li>Created Tableau dashboards for managers, improving alignment by 28.6%.</li>
-        <li>Automated weekly Python reports, saving 8+ hours/month.</li>
-      </ul>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-      <h3 class="text-xl font-semibold text-blue-300">Generative AI Intern</h3>
-      <p class="text-gray-400">GenAI Protos | Mar 2025 - Present</p>
-      <ul class="list-disc list-inside text-gray-300 mt-4">
-        <li>Developing custom-tailored Generative AI prototypes for customer use cases, enhancing client-specific solutions.</li>
-        <li>Working with NLP, speech recognition, and TTS to create adaptable applications driven by AI.</li>
-      </ul>
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Experience</h2>
+    <div class="max-w-7xl mx-auto">
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+        <h3 class="text-xl font-semibold text-purple-400">Automation Data Analyst</h3>
+        <p class="text-gray-400">Hindustan Petroleum Corporation Limited | Jun 2024 - Jul 2024</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Developed an LSTM model predicting equipment failures, reducing downtime by 14.8%.</li>
+          <li>Automated IoT sensor alerts, cutting manual inspections by 20%.</li>
+          <li>Built an ensemble model improving fuel demand forecast accuracy by 23.7% and cutting excess inventory costs by 15%.</li>
+          <li>Created Tableau dashboards for managers, improving alignment by 28.6%.</li>
+          <li>Automated weekly Python reports, saving 8+ hours/month.</li>
+        </ul>
+      </div>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+        <h3 class="text-xl font-semibold text-purple-400">Generative AI Intern</h3>
+        <p class="text-gray-400">GenAI Protos | Mar 2025 - Present</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Developing custom-tailored Generative AI prototypes for customer use cases, enhancing client-specific solutions.</li>
+          <li>Working with NLP, speech recognition, and TTS to create adaptable applications driven by AI.</li>
+        </ul>
+      </div>
     </div>
   </section>
+
+  <div class="section-divider max-w-7xl mx-auto"></div>
 
   <!-- Projects Section -->
   <section id="projects" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">Projects</h2>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-      <h3 class="text-xl font-semibold text-blue-300">
-        <a href="https://github.com/anweshaprakash/comp-vision-visual-taxonomy" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Computer Vision for Fashion Attribute Classification</a>
-      </h3>
-      <p class="text-gray-400">Dec 2024</p>
-      <ul class="list-disc list-inside text-gray-300 mt-4">
-        <li>Developed a multilabel classification model with 70.4k images, achieving 89.5% accuracy in predicting fashion attributes.</li>
-        <li>Optimized memory usage for large datasets with EfficientNetB0 and custom data generators, reducing system load.</li>
-        <li>Improved training efficiency by 19.3% with sparse categorical cross-entropy and Adam optimizer.</li>
-      </ul>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-      <h3 class="text-xl font-semibold text-blue-300">
-        <a href="https://github.com/anweshaprakash/code-analyzer" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Code Analyzer</a>
-      </h3>
-      <p class="text-gray-400">Mar 2025</p>
-      <ul class="list-disc list-inside text-gray-300 mt-4">
-        <li>Created a tool to parse and analyze code, enhancing readability and reducing technical debt.</li>
-        <li>Implemented static analysis to ensure compliance with coding standards and minimize vulnerabilities.</li>
-        <li>Made the tool modular to support custom rules for diverse software development needs.</li>
-      </ul>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-      <h3 class="text-xl font-semibold text-blue-300">
-        <a href="https://www.kaggle.com/code/anweshaprakash/twitter-sentiment-analysis-nlp" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Twitter Sentiment Analysis</a>
-      </h3>
-      <p class="text-gray-400">Oct 2024</p>
-      <ul class="list-disc list-inside text-gray-300 mt-4">
-        <li>Built an LSTM model for sentiment analysis with 87.02% accuracy and an F1 score of 0.8701.</li>
-        <li>Pre-processed tweets with NLP techniques like tokenization and lemmatization.</li>
-        <li>Optimized the model with hyperparameter tuning and early stopping to avoid overfitting.</li>
-      </ul>
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Projects</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400">
+          <a href="https://github.com/anweshaprakash/comp-vision-visual-taxonomy" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300">Computer Vision for Fashion Attribute Classification</a>
+        </h3>
+        <p class="text-gray-400">Dec 2024</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Developed a multilabel classification model with 70.4k images, achieving 89.5% accuracy in predicting fashion attributes.</li>
+          <li>Optimized memory usage for large datasets with EfficientNetB0 and custom data generators, reducing system load.</li>
+          <li>Improved training efficiency by 19.3% with sparse categorical cross-entropy and Adam optimizer.</li>
+        </ul>
+      </div>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400">
+          <a href="https://github.com/anweshaprakash/code-analyzer" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300">Code Analyzer</a>
+        </h3>
+        <p class="text-gray-400">Mar 2025</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Created a tool to parse and analyze code, enhancing readability and reducing technical debt.</li>
+          <li>Implemented static analysis to ensure compliance with coding standards and minimize vulnerabilities.</li>
+          <li>Made the tool modular to support custom rules for diverse software development needs.</li>
+        </ul>
+      </div>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400">
+          <a href="https://www.kaggle.com/code/anweshaprakash/twitter-sentiment-analysis-nlp" target="_blank" rel="noopener noreferrer" class="hover:text-blue-300">Twitter Sentiment Analysis</a>
+        </h3>
+        <p class="text-gray-400">Oct 2024</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Built an LSTM model for sentiment analysis with 87.02% accuracy and an F1 score of 0.8701.</li>
+          <li>Pre-processed tweets with NLP techniques like tokenization and lemmatization.</li>
+          <li>Optimized the model with hyperparameter tuning and early stopping to avoid overfitting.</li>
+        </ul>
+      </div>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400">Advanced RAG ChatBot</h3>
+        <p class="text-gray-400">Mar 2025</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Built a Streamlit-based RAG app for PDF QA using FAISS, FlagEmbedding reranking, and GPT-3.5/4o.</li>
+          <li>Achieved 0.95 faithfulness and 0.8587 relevance using RAGAS metrics.</li>
+          <li>Integrated semantic chunking, metadata, and chat history caching for smoother UX.</li>
+        </ul>
+      </div>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400">Agentic AI Researcher</h3>
+        <p class="text-gray-400">Apr 2025</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4">
+          <li>Developed a research assistant app with LangChain agents in Streamlit using GPT-4.</li>
+          <li>Integrated tools for ArXiv fetch, summarization, explanation, and web Q&A.</li>
+          <li>Achieved 30% lower latency with real-time streaming and optimized agent orchestration.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
   <!-- Skills Section -->
   <section id="skills" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">Languages</h3>
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Skills</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-code mr-2"></i>Languages</h3>
         <p class="text-gray-300">Python, C, SQL</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">Embedded Systems</h3>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-microchip mr-2"></i>Embedded Systems</h3>
         <p class="text-gray-300">Arduino, ESP32, MPU6050</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">AI/ML Tools</h3>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-brain mr-2"></i>AI/ML Tools</h3>
         <p class="text-gray-300">TensorFlow, Keras, scikit-learn, Langchain</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">Cloud Platforms</h3>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-cloud mr-2"></i>Cloud Platforms</h3>
         <p class="text-gray-300">AWS, Azure</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">NLP Tools</h3>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-language mr-2"></i>NLP Tools</h3>
         <p class="text-gray-300">spaCy, SciSpacy, NLTK, ChatGroq</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold text-blue-300 mb-4">Version Control</h3>
+      <div class="card bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-purple-400 mb-4"><i class="fas fa-code-branch mr-2"></i>Version Control</h3>
         <p class="text-gray-300">Git, GitHub</p>
       </div>
     </div>
   </section>
 
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
   <!-- Contact Section -->
   <section id="contact" class="py-16 px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">Contact</h2>
-    <div class="text-center">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Contact</h2>
+    <div class="max-w-7xl mx-auto text-center">
       <p class="text-gray-300 mb-4">Feel free to reach out!</p>
-      <div class="flex justify-center space-x-6">
-        <a href="tel:9424338614" class="text-blue-400 hover:text-blue-300">+91 9424338614</a>
-        <a href="mailto:anweshaprakash19@gmail.com" class="text-blue-400 hover:text-blue-300">anweshaprakash19@gmail.com</a>
-        <a href="https://www.linkedin.com/in/anwesha-prakash-914609254/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
-        <a href="https://github.com/anweshaprakash" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">GitHub</a>
+      <div class="flex justify-center space-x-6 flex-wrap">
+        <a href="tel:9424338614" class="text-blue-400 hover:text-blue-300 m-2"><i class="fas fa-phone mr-2"></i>+91 9424338614</a>
+        <a href="mailto:anweshaprakash19@gmail.com" class="text-blue-400 hover:text-blue-300 m-2"><i class="fas fa-envelope mr-2"></i>anweshaprakash19@gmail.com</a>
+        <a href="https://www.linkedin.com/in/anwesha-prakash-914609254/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 m-2"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+        <a href="https://github.com/anweshaprakash" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 m-2"><i class="fab fa-github mr-2"></i>GitHub</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 py-4 text-center text-gray-400">
-    <p>© 2025 Anwesha Prakash. All rights reserved.</p>
+  <footer class="bg-gray-900 py-8 text-center text-gray-400">
+    <p class="text-lg">© 2025 Anwesha Prakash. All rights reserved.</p>
+    <p class="mt-2">Built with <i class="fas fa-heart text-red-500"></i> by Anwesha</p>
   </footer>
 </body>
 </html>
