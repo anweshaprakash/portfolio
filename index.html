@@ -5,218 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anwesha Prakash - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.22.9/babel.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <div id="root"></div>
-  <script type="text/babel">
-    const { useState } = React;
-
-    const NavLink = ({ href, children }) => (
-      <a href={href} className="text-gray-300 hover:text-blue-400 transition duration-300">{children}</a>
-    );
-
-    const Section = ({ id, title, children }) => (
-      <section id={id} className="py-16 px-4 md:px-8">
-        <h2 className="text-3xl font-bold text-blue-400 mb-8">{title}</h2>
-        {children}
-      </section>
-    );
-
-    const SkillCard = ({ category, skills }) => (
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 className="text-xl font-semibold text-blue-300 mb-4">{category}</h3>
-        <p className="text-gray-300">{skills}</p>
-      </div>
-    );
-
-    const ExperienceCard = ({ title, company, duration, details }) => (
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-        <h3 className="text-xl font-semibold text-blue-300">{title}</h3>
-        <p className="text-gray-400">{company} | {duration}</p>
-        <ul className="list-disc list-inside text-gray-300 mt-4">
-          {details.map((detail, index) => (
-            <li key={index}>{detail}</li>
-          ))}
-        </ul>
-      </div>
-    );
-
-    const ProjectCard = ({ title, date, link, details }) => (
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-        <h3 className="text-xl font-semibold text-blue-300">
-          <a href={link} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">{title}</a>
-        </h3>
-        <p className="text-gray-400">{date}</p>
-        <ul className="list-disc list-inside text-gray-300 mt-4">
-          {details.map((detail, index) => (
-            <li key={index}>{detail}</li>
-          ))}
-        </ul>
-      </div>
-    );
-
-    const App = () => {
-      const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-      return (
-        <div>
-          {/* Navbar */}
-          <nav className="bg-gray-800 fixed w-full top-0 z-10 shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between h-16">
-                <div className="flex items-center">
-                  <h1 className="text-xl font-bold text-blue-400">Anwesha Prakash</h1>
-                </div>
-                <div className="hidden md:flex space-x-8 items-center">
-                  <NavLink href="#home">Home</NavLink>
-                  <NavLink href="#about">About</NavLink>
-                  <NavLink href="#experience">Experience</NavLink>
-                  <NavLink href="#projects">Projects</NavLink>
-                  <NavLink href="#skills">Skills</NavLink>
-                  <NavLink href="#contact">Contact</NavLink>
-                </div>
-                <div className="md:hidden flex items-center">
-                  <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-300">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            {isMenuOpen && (
-              <div className="md:hidden bg-gray-800">
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                  <NavLink href="#home">Home</NavLink>
-                  <NavLink href="#about">About</NavLink>
-                  <NavLink href="#experience">Experience</NavLink>
-                  <NavLink href="#projects">Projects</NavLink>
-                  <NavLink href="#skills">Skills</NavLink>
-                  <NavLink href="#contact">Contact</NavLink>
-                </div>
-              </div>
-            )}
-          </nav>
-
-          {/* Home Section */}
-          <Section id="home" title="Welcome">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-4">Anwesha Prakash</h1>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                Pre-final-year Electronics and Communication Engineering student specializing in IoT, currently interning as a Generative AI Engineer. Skilled in AI/ML, NLP, and data analysis, with experience in IoT systems, cloud platforms, and generative AI. Proficient in Python, embedded systems, and projects involving speech recognition and code analysis. Aiming to apply technical skills to create impactful solutions.
-              </p>
-            </div>
-          </Section>
-
-          {/* About Section */}
-          <Section id="about" title="About">
-            <h3 className="text-2xl font-semibold text-blue-300 mb-4">Education</h3>
-            <p className="text-gray-300">Netaji Subhas University of Technology (Nov 2022 - Jul 2026)</p>
-            <p className="text-gray-300">Bachelor of Technology in Electronics and Communication Engineering, Specialization: Internet of Things</p>
-            <h3 className="text-2xl font-semibold text-blue-300 mt-8 mb-4">Certifications</h3>
-            <ul className="list-disc list-inside text-gray-300">
-              <li><a href="https://coursera.org/share/a470bf0a119129954eb5922e547d229c" target="_blank" rel="noopener noreferrer" className="text-blue-400">Supervised Machine Learning: Regression and Classification</a> - DeepLearning.AI</li>
-              <li><a href="https://coursera.org/share/e2895d041b8f3d2148fbdd388fc77723" target="_blank" rel="noopener noreferrer" className="text-blue-400">Advanced Learning Algorithms</a> - DeepLearning.AI</li>
-              <li><a href="https://coursera.org/share/85c8f8e93858162ac43aec90c0c97b80" target="_blank" rel="noopener noreferrer" className="text-blue-400">Unsupervised Learning, Recommenders, Reinforcement Learning</a> - DeepLearning.AI</li>
-            </ul>
-          </Section>
-
-          {/* Experience Section */}
-          <Section id="experience" title="Experience">
-            <ExperienceCard
-              title="Automation Data Analyst"
-              company="Hindustan Petroleum Corporation Limited"
-              duration="Jun 2024 - Jul 2024"
-              details={[
-                "Developed an LSTM model predicting equipment failures, reducing downtime by 14.8%.",
-                "Automated IoT sensor alerts, cutting manual inspections by 20%.",
-                "Built an ensemble model improving fuel demand forecast accuracy by 23.7% and cutting excess inventory costs by 15%.",
-                "Created Tableau dashboards for managers, improving alignment by 28.6%.",
-                "Automated weekly Python reports, saving 8+ hours/month."
-              ]}
-            />
-            <ExperienceCard
-              title="Generative AI Intern"
-              company="GenAI Protos"
-              duration="Mar 2025 - Present"
-              details={[
-                "Developing custom-tailored Generative AI prototypes for customer use cases, enhancing client-specific solutions.",
-                "Working with NLP, speech recognition, and TTS to create adaptable applications driven by AI."
-              ]}
-            />
-          </Section>
-
-          {/* Projects Section */}
-          <Section id="projects" title="Projects">
-            <ProjectCard
-              title="Computer Vision for Fashion Attribute Classification"
-              date="Dec 2024"
-              link="https://github.com/anweshaprakash/comp-vision-visual-taxonomy"
-              details={[
-                "Developed a multilabel classification model with 70.4k images, achieving 89.5% accuracy in predicting fashion attributes.",
-                "Optimized memory usage for large datasets with EfficientNetB0 and custom data generators, reducing system load.",
-                "Improved training efficiency by 19.3% with sparse categorical cross-entropy and Adam optimizer."
-              ]}
-            />
-            <ProjectCard
-              title="Code Analyzer"
-              date="Mar 2025"
-              link="https://github.com/anweshaprakash/code-analyzer"
-              details={[
-                "Created a tool to parse and analyze code, enhancing readability and reducing technical debt.",
-                "Implemented static analysis to ensure compliance with coding standards and minimize vulnerabilities.",
-                "Made the tool modular to support custom rules for diverse software development needs."
-              ]}
-            />
-            <ProjectCard
-              title="Twitter Sentiment Analysis"
-              date="Oct 2024"
-              link="https://www.kaggle.com/code/anweshaprakash/twitter-sentiment-analysis-nlp"
-              details={[
-                "Built an LSTM model for sentiment analysis with 87.02% accuracy and an F1 score of 0.8701.",
-                "Pre-processed tweets with NLP techniques like tokenization and lemmatization.",
-                "Optimized the model with hyperparameter tuning and early stopping to avoid overfitting."
-              ]}
-            />
-          </Section>
-
-          {/* Skills Section */}
-          <Section id="skills" title="Skills">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <SkillCard category="Languages" skills="Python, C, SQL" />
-              <SkillCard category="Embedded Systems" skills="Arduino, ESP32, MPU6050" />
-              <SkillCard category="AI/ML Tools" skills="TensorFlow, Keras, scikit-learn, Langchain" />
-              <SkillCard category="Cloud Platforms" skills="AWS, Azure" />
-              <SkillCard category="NLP Tools" skills="spaCy, SciSpacy, NLTK, ChatGroq" />
-              <SkillCard category="Version Control" skills="Git, GitHub" />
-            </div>
-          </Section>
-
-          {/* Contact Section */}
-          <Section id="contact" title="Contact">
-            <div className="text-center">
-              <p className="text-gray-300 mb-4">Feel free to reach out!</p>
-              <div className="flex justify-center space-x-6">
-                <a href="tel:9424338614" className="text-blue-400 hover:text-blue-300">+91 9424338614</a>
-                <a href="mailto:anweshaprakash19@gmail.com" className="text-blue-400 hover:text-blue-300">anweshaprakash19@gmail.com</a>
-                <a href="https://www.linkedin.com/in/anwesha-prakash-914609254/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">LinkedIn</a>
-                <a href="https://github.com/anweshaprakash" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">GitHub</a>
-              </div>
-            </div>
-          </Section>
-
-          {/* Footer */}
-          <footer className="bg-gray-800 py-4 text-center text-gray-400">
-            <p>&copy; 2025 Anwesha Prakash. All rights reserved.</p>
-          </footer>
+  <!-- Navbar -->
+  <nav class="bg-gray-800 fixed w-full top-0 z-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between h-16">
+        <div className="flex items-center">
+          <h1 className="text-xl font-bold text-blue-400">Anwesha Prakash</h1>
         </div>
-      );
-    };
+        <div className="flex space-x-8 items-center">
+          <a href="#home" class="text-gray-300 hover:text-blue-400 transition duration-300">Home</a>
+          <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+          <a href="#experience" class="text-gray-300 hover:text-blue-400 transition duration-300">Experience</a>
+          <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+          <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
+          <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    ReactDOM.render(<App />, document.getElementById('root'));
-  </script>
+  <!-- Home Section -->
+  <section id="home" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Welcome</h2>
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-400 mb-4">Anwesha Prakash</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Pre-final-year Electronics and Communication Engineering student specializing in IoT, currently interning as a Generative AI Engineer. Skilled in AI/ML, NLP, and data analysis, with experience in IoT systems, cloud platforms, and generative AI. Proficient in Python, embedded systems, and projects involving speech recognition and code analysis. Aiming to apply technical skills to create impactful solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">About</h2>
+    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Education</h3>
+    <p class="text-gray-300">Netaji Subhas University of Technology (Nov 2022 - Jul 2026)</p>
+    <p class="text-gray-300">Bachelor of Technology in Electronics and Communication Engineering, Specialization: Internet of Things</p>
+    <h3 class="text-2xl font-semibold text-blue-300 mt-8 mb-4">Certifications</h3>
+    <ul class="list-disc list-inside text-gray-300">
+      <li><a href="https://coursera.org/share/a470bf0a119129954eb5922e547d229c" target="_blank" rel="noopener noreferrer" class="text-blue-400">Supervised Machine Learning: Regression and Classification</a> - DeepLearning.AI</li>
+      <li><a href="https://coursera.org/share/e2895d041b8f3d2148fbdd388fc77723" target="_blank" rel="noopener noreferrer" class="text-blue-400">Advanced Learning Algorithms</a> - DeepLearning.AI</li>
+      <li><a href="https://coursera.org/share/85c8f8e93858162ac43aec90c0c97b80" target="_blank" rel="noopener noreferrer" class="text-blue-400">Unsupervised Learning, Recommenders, Reinforcement Learning</a> - DeepLearning.AI</li>
+    </ul>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">Experience</h2>
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+      <h3 class="text-xl font-semibold text-blue-300">Automation Data Analyst</h3>
+      <p class="text-gray-400">Hindustan Petroleum Corporation Limited | Jun 2024 - Jul 2024</p>
+      <ul class="list-disc list-inside text-gray-300 mt-4">
+        <li>Developed an LSTM model predicting equipment failures, reducing downtime by 14.8%.</li>
+        <li>Automated IoT sensor alerts, cutting manual inspections by 20%.</li>
+        <li>Built an ensemble model improving fuel demand forecast accuracy by 23.7% and cutting excess inventory costs by 15%.</li>
+        <li>Created Tableau dashboards for managers, improving alignment by 28.6%.</li>
+        <li>Automated weekly Python reports, saving 8+ hours/month.</li>
+      </ul>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+      <h3 class="text-xl font-semibold text-blue-300">Generative AI Intern</h3>
+      <p class="text-gray-400">GenAI Protos | Mar 2025 - Present</p>
+      <ul class="list-disc list-inside text-gray-300 mt-4">
+        <li>Developing custom-tailored Generative AI prototypes for customer use cases, enhancing client-specific solutions.</li>
+        <li>Working with NLP, speech recognition, and TTS to create adaptable applications driven by AI.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">Projects</h2>
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+      <h3 class="text-xl font-semibold text-blue-300">
+        <a href="https://github.com/anweshaprakash/comp-vision-visual-taxonomy" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Computer Vision for Fashion Attribute Classification</a>
+      </h3>
+      <p class="text-gray-400">Dec 2024</p>
+      <ul class="list-disc list-inside text-gray-300 mt-4">
+        <li>Developed a multilabel classification model with 70.4k images, achieving 89.5% accuracy in predicting fashion attributes.</li>
+        <li>Optimized memory usage for large datasets with EfficientNetB0 and custom data generators, reducing system load.</li>
+        <li>Improved training efficiency by 19.3% with sparse categorical cross-entropy and Adam optimizer.</li>
+      </ul>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+      <h3 class="text-xl font-semibold text-blue-300">
+        <a href="https://github.com/anweshaprakash/code-analyzer" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Code Analyzer</a>
+      </h3>
+      <p class="text-gray-400">Mar 2025</p>
+      <ul class="list-disc list-inside text-gray-300 mt-4">
+        <li>Created a tool to parse and analyze code, enhancing readability and reducing technical debt.</li>
+        <li>Implemented static analysis to ensure compliance with coding standards and minimize vulnerabilities.</li>
+        <li>Made the tool modular to support custom rules for diverse software development needs.</li>
+      </ul>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+      <h3 class="text-xl font-semibold text-blue-300">
+        <a href="https://www.kaggle.com/code/anweshaprakash/twitter-sentiment-analysis-nlp" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400">Twitter Sentiment Analysis</a>
+      </h3>
+      <p class="text-gray-400">Oct 2024</p>
+      <ul class="list-disc list-inside text-gray-300 mt-4">
+        <li>Built an LSTM model for sentiment analysis with 87.02% accuracy and an F1 score of 0.8701.</li>
+        <li>Pre-processed tweets with NLP techniques like tokenization and lemmatization.</li>
+        <li>Optimized the model with hyperparameter tuning and early stopping to avoid overfitting.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Languages</h3>
+        <p class="text-gray-300">Python, C, SQL</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Embedded Systems</h3>
+        <p class="text-gray-300">Arduino, ESP32, MPU6050</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">AI/ML Tools</h3>
+        <p class="text-gray-300">TensorFlow, Keras, scikit-learn, Langchain</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Cloud Platforms</h3>
+        <p class="text-gray-300">AWS, Azure</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">NLP Tools</h3>
+        <p class="text-gray-300">spaCy, SciSpacy, NLTK, ChatGroq</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-300 mb-4">Version Control</h3>
+        <p class="text-gray-300">Git, GitHub</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 md:px-8">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">Contact</h2>
+    <div class="text-center">
+      <p class="text-gray-300 mb-4">Feel free to reach out!</p>
+      <div class="flex justify-center space-x-6">
+        <a href="tel:9424338614" class="text-blue-400 hover:text-blue-300">+91 9424338614</a>
+        <a href="mailto:anweshaprakash19@gmail.com" class="text-blue-400 hover:text-blue-300">anweshaprakash19@gmail.com</a>
+        <a href="https://www.linkedin.com/in/anwesha-prakash-914609254/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
+        <a href="https://github.com/anweshaprakash" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-4 text-center text-gray-400">
+    <p>© 2025 Anwesha Prakash. All rights reserved.</p>
+  </footer>
 </body>
 </html>
